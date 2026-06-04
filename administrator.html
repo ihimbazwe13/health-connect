@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Administrator Dashboard | Health Connect</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+
+display:flex;
+flex-direction:column;
+min-height:100vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,.75),
+rgba(0,0,0,.75)),
+url("images/doctor-background.jpg");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+}
+
+header{
+background:#003366;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.main-container{
+display:flex;
+flex:1;
+}
+
+.sidebar{
+width:320px;
+background:#0b3d91;
+color:white;
+}
+
+.sidebar h2{
+padding:20px;
+text-align:center;
+background:#062a64;
+}
+
+details{
+border-bottom:1px solid rgba(255,255,255,.3);
+}
+
+summary{
+padding:18px;
+cursor:pointer;
+font-weight:bold;
+}
+
+summary:hover{
+background:#124db6;
+}
+
+.dropdown-content{
+background:white;
+color:black;
+padding:15px;
+}
+
+.dropdown-content input,
+.dropdown-content select,
+.dropdown-content textarea{
+width:100%;
+padding:10px;
+margin-bottom:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.content{
+flex:1;
+padding:30px;
+}
+
+/* Glass Card */
+
+.card{
+
+background:rgba(
+255,
+255,
+255,
+0.12);
+
+border:1px solid rgba(
+255,
+255,
+255,
+0.15);
+
+backdrop-filter:blur(15px);
+-webkit-backdrop-filter:blur(15px);
+
+padding:25px;
+border-radius:15px;
+
+box-shadow:
+0 20px 40px
+rgba(0,0,0,.4);
+
+color:white;
+
+}
+
+.card h2{
+margin-bottom:20px;
+color:#00f0ff;
+}
+
+.card label{
+display:block;
+margin-top:15px;
+margin-bottom:8px;
+font-weight:bold;
+}
+
+.card textarea,
+.card select{
+
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+
+margin-bottom:15px;
+
+}
+
+button{
+background:green;
+color:white;
+border:none;
+padding:12px 25px;
+cursor:pointer;
+border-radius:5px;
+font-weight:bold;
+}
+
+button:hover{
+background:#006400;
+}
+
+footer{
+background:#003366;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Health Connect Administrator Dashboard</h1>
+</header>
+
+<div class="main-container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>Menu</h2>
+
+<!-- Patient Information -->
+
+<details>
+
+<summary>Patient Information ></summary>
+
+<div class="dropdown-content">
+
+<input type="text"
+placeholder="Full Name">
+
+<input type="date">
+
+<input type="email"
+placeholder="Email Address">
+
+<input type="tel"
+placeholder="Phone Number">
+
+<select>
+
+<option>Select District</option>
+
+<option>Gasabo</option>
+<option>Kicukiro</option>
+<option>Nyarugenge</option>
+<option>Musanze</option>
+<option>Rubavu</option>
+<option>Huye</option>
+<option>Rusizi</option>
+<option>Nyagatare</option>
+
+</select>
+
+<input type="text"
+placeholder="Sector">
+
+<select>
+
+<option>Select Blood Type</option>
+
+<option>A+</option>
+<option>A-</option>
+<option>B+</option>
+<option>B-</option>
+<option>AB+</option>
+<option>AB-</option>
+<option>O+</option>
+<option>O-</option>
+
+</select>
+
+<select>
+
+<option>Priority Level</option>
+
+<option>Standard</option>
+<option>Urgent</option>
+
+</select>
+
+<textarea rows="3"
+placeholder="Known Allergies"></textarea>
+
+<textarea rows="4"
+placeholder="Detailed Symptoms"></textarea>
+
+</div>
+
+</details>
+
+<!-- Pharmacy -->
+
+<details>
+
+<summary>Pharmacy ></summary>
+
+<div class="dropdown-content">
+
+<select>
+
+<option>Select District</option>
+
+<option>Gasabo</option>
+<option>Kicukiro</option>
+<option>Nyarugenge</option>
+<option>Musanze</option>
+<option>Rubavu</option>
+<option>Huye</option>
+
+</select>
+
+<select>
+
+<option>Select Pharmacy</option>
+
+<option>Goodlife Pharmacy</option>
+<option>MediCare Pharmacy</option>
+<option>Health First Pharmacy</option>
+<option>City Pharmacy</option>
+<option>CarePlus Pharmacy</option>
+
+</select>
+
+<select>
+
+<option>Select Medicine Type</option>
+
+<option>Tablet</option>
+<option>Capsule</option>
+<option>Syrup</option>
+<option>Injection</option>
+<option>Cream</option>
+<option>Drops</option>
+
+</select>
+
+</div>
+
+</details>
+
+<!-- Hospitals -->
+
+<details>
+
+<summary>Hospitals ></summary>
+
+<div class="dropdown-content">
+
+<select>
+
+<option>Select District</option>
+
+<option>Gasabo</option>
+<option>Kicukiro</option>
+<option>Nyarugenge</option>
+<option>Musanze</option>
+<option>Rubavu</option>
+<option>Huye</option>
+
+</select>
+
+<select>
+
+<option>Select Hospital</option>
+
+<option>King Faisal Hospital</option>
+<option>CHUK</option>
+<option>Rwanda Military Hospital</option>
+<option>Kibagabaga Hospital</option>
+<option>Muhima Hospital</option>
+<option>Masaka Hospital</option>
+
+</select>
+
+<select>
+
+<option>Select Service</option>
+
+<option>General</option>
+<option>Emergency</option>
+<option>Surgery</option>
+<option>Maternity</option>
+<option>Pediatrics</option>
+
+</select>
+
+</div>
+
+</details>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="content">
+
+<div class="card">
+
+<h2>Doctor Workspace</h2>
+
+<label>Diagnosis</label>
+
+<textarea rows="8"
+placeholder="Enter diagnosis"></textarea>
+
+<label>Prescription</label>
+
+<textarea rows="8"
+placeholder="Enter prescription"></textarea>
+
+<label>Treatment Notes</label>
+
+<textarea rows="5"
+placeholder="Additional notes"></textarea>
+
+<label>Recommended Hospital</label>
+
+<select>
+
+<option>King Faisal Hospital</option>
+<option>CHUK</option>
+<option>Rwanda Military Hospital</option>
+<option>Kibagabaga Hospital</option>
+
+</select>
+
+<label>Recommended Pharmacy</label>
+
+<select>
+
+<option>Goodlife Pharmacy</option>
+<option>MediCare Pharmacy</option>
+<option>Health First Pharmacy</option>
+<option>City Pharmacy</option>
+
+</select>
+
+<button>
+Save Patient Record
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Health Connect | Smart Healthcare Management System
+</footer>
+
+</body>
+</html>
