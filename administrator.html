@@ -1,417 +1,868 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Administrator Dashboard | Health Connect</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Health Connect | Administrator Dashboard
+</title>
+
 
 <style>
 
+
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
+
 }
+
+
 
 body{
 
-display:flex;
-flex-direction:column;
-min-height:100vh;
 
 background:
+
 linear-gradient(
 rgba(0,0,0,.75),
-rgba(0,0,0,.75)),
+rgba(0,0,0,.75)
+),
+
 url("images/doctor-background.jpg");
 
+
 background-size:cover;
+
 background-position:center;
+
 background-attachment:fixed;
 
+
 }
+
+
+
 
 header{
+
+
 background:#003366;
+
 color:white;
+
 padding:20px;
+
 text-align:center;
+
+
 }
 
-.main-container{
+
+
+
+.main{
+
+
 display:flex;
-flex:1;
+
+min-height:90vh;
+
+
 }
+
+
+
+
 
 .sidebar{
-width:320px;
+
+
+width:350px;
+
 background:#0b3d91;
+
 color:white;
+
+padding:20px;
+
+
 }
+
+
 
 .sidebar h2{
-padding:20px;
+
+
 text-align:center;
-background:#062a64;
+
+margin-bottom:20px;
+
+
 }
 
-details{
-border-bottom:1px solid rgba(255,255,255,.3);
-}
 
-summary{
-padding:18px;
-cursor:pointer;
-font-weight:bold;
-}
 
-summary:hover{
-background:#124db6;
-}
-
-.dropdown-content{
-background:white;
-color:black;
-padding:15px;
-}
-
-.dropdown-content input,
-.dropdown-content select,
-.dropdown-content textarea{
-width:100%;
-padding:10px;
-margin-bottom:10px;
-border:1px solid #ccc;
-border-radius:5px;
-}
-
-.content{
-flex:1;
-padding:30px;
-}
-
-/* Glass Card */
 
 .card{
 
-background:rgba(
-255,
-255,
-255,
-0.12);
 
-border:1px solid rgba(
-255,
-255,
-255,
-0.15);
+background:
+
+rgba(255,255,255,.15);
+
 
 backdrop-filter:blur(15px);
--webkit-backdrop-filter:blur(15px);
 
-padding:25px;
-border-radius:15px;
-
-box-shadow:
-0 20px 40px
-rgba(0,0,0,.4);
 
 color:white;
 
+
+padding:30px;
+
+
+margin:30px;
+
+
+border-radius:15px;
+
+
+box-shadow:0 0 30px black;
+
+
+flex:1;
+
+
 }
 
-.card h2{
-margin-bottom:20px;
-color:#00f0ff;
-}
 
-.card label{
-display:block;
-margin-top:15px;
-margin-bottom:8px;
-font-weight:bold;
-}
 
-.card textarea,
-.card select{
+
+input,
+select,
+textarea{
+
 
 width:100%;
+
+
 padding:12px;
-border:none;
-border-radius:10px;
+
 
 margin-bottom:15px;
 
+
+border-radius:8px;
+
+
+border:none;
+
+
 }
+
+
+
 
 button{
+
+
 background:green;
+
 color:white;
+
 border:none;
-padding:12px 25px;
+
+padding:12px 20px;
+
+border-radius:6px;
+
 cursor:pointer;
-border-radius:5px;
-font-weight:bold;
+
+margin-top:10px;
+
+
 }
+
+
 
 button:hover{
+
+
 background:#006400;
+
+
 }
+
+
+
+.patient-box{
+
+
+background:white;
+
+color:black;
+
+padding:20px;
+
+border-radius:10px;
+
+line-height:30px;
+
+
+}
+
+
+
+.response{
+
+
+background:white;
+
+color:black;
+
+padding:15px;
+
+margin-top:20px;
+
+border-radius:10px;
+
+
+}
+
+
+
 
 footer{
+
+
 background:#003366;
+
 color:white;
-text-align:center;
+
 padding:15px;
+
+text-align:center;
+
+
 }
 
+
 </style>
+
+
 </head>
+
+
+
+
 
 <body>
 
+
+
+
+
 <header>
-<h1>Health Connect Administrator Dashboard</h1>
+
+<h1>
+
+Health Connect Administrator Dashboard
+
+</h1>
+
 </header>
 
-<div class="main-container">
 
-<!-- Sidebar -->
+
+
+
+
+
+<div class="main">
+
+
+
+
+
 
 <div class="sidebar">
 
-<h2>Menu</h2>
 
-<!-- Patient Information -->
 
-<details>
+<h2>
 
-<summary>Patient Information ></summary>
+Patient Control
 
-<div class="dropdown-content">
+</h2>
 
-<input type="text"
-placeholder="Full Name">
 
-<input type="date">
 
-<input type="email"
-placeholder="Email Address">
+<button onclick="sendToHospital()">
 
-<input type="tel"
-placeholder="Phone Number">
+Admit Patient
 
-<select>
+</button>
 
-<option>Select District</option>
 
-<option>Gasabo</option>
-<option>Kicukiro</option>
-<option>Nyarugenge</option>
-<option>Musanze</option>
-<option>Rubavu</option>
-<option>Huye</option>
-<option>Rusizi</option>
-<option>Nyagatare</option>
 
-</select>
+<button onclick="sendToPharmacy()">
 
-<input type="text"
-placeholder="Sector">
+Send Prescription
 
-<select>
+</button>
 
-<option>Select Blood Type</option>
 
-<option>A+</option>
-<option>A-</option>
-<option>B+</option>
-<option>B-</option>
-<option>AB+</option>
-<option>AB-</option>
-<option>O+</option>
-<option>O-</option>
+<button onclick="sendEmail()">
 
-</select>
+Send Conclusion Email
 
-<select>
+</button>
 
-<option>Priority Level</option>
 
-<option>Standard</option>
-<option>Urgent</option>
 
-</select>
-
-<textarea rows="3"
-placeholder="Known Allergies"></textarea>
-
-<textarea rows="4"
-placeholder="Detailed Symptoms"></textarea>
 
 </div>
 
-</details>
 
-<!-- Pharmacy -->
 
-<details>
 
-<summary>Pharmacy ></summary>
 
-<div class="dropdown-content">
 
-<select>
 
-<option>Select District</option>
 
-<option>Gasabo</option>
-<option>Kicukiro</option>
-<option>Nyarugenge</option>
-<option>Musanze</option>
-<option>Rubavu</option>
-<option>Huye</option>
-
-</select>
-
-<select>
-
-<option>Select Pharmacy</option>
-
-<option>Goodlife Pharmacy</option>
-<option>MediCare Pharmacy</option>
-<option>Health First Pharmacy</option>
-<option>City Pharmacy</option>
-<option>CarePlus Pharmacy</option>
-
-</select>
-
-<select>
-
-<option>Select Medicine Type</option>
-
-<option>Tablet</option>
-<option>Capsule</option>
-<option>Syrup</option>
-<option>Injection</option>
-<option>Cream</option>
-<option>Drops</option>
-
-</select>
-
-</div>
-
-</details>
-
-<!-- Hospitals -->
-
-<details>
-
-<summary>Hospitals ></summary>
-
-<div class="dropdown-content">
-
-<select>
-
-<option>Select District</option>
-
-<option>Gasabo</option>
-<option>Kicukiro</option>
-<option>Nyarugenge</option>
-<option>Musanze</option>
-<option>Rubavu</option>
-<option>Huye</option>
-
-</select>
-
-<select>
-
-<option>Select Hospital</option>
-
-<option>King Faisal Hospital</option>
-<option>CHUK</option>
-<option>Rwanda Military Hospital</option>
-<option>Kibagabaga Hospital</option>
-<option>Muhima Hospital</option>
-<option>Masaka Hospital</option>
-
-</select>
-
-<select>
-
-<option>Select Service</option>
-
-<option>General</option>
-<option>Emergency</option>
-<option>Surgery</option>
-<option>Maternity</option>
-<option>Pediatrics</option>
-
-</select>
-
-</div>
-
-</details>
-
-</div>
-
-<!-- Main Content -->
-
-<div class="content">
 
 <div class="card">
 
-<h2>Doctor Workspace</h2>
 
-<label>Diagnosis</label>
 
-<textarea rows="8"
-placeholder="Enter diagnosis"></textarea>
 
-<label>Prescription</label>
 
-<textarea rows="8"
-placeholder="Enter prescription"></textarea>
+<h2>
 
-<label>Treatment Notes</label>
+Patient Information Received
 
-<textarea rows="5"
-placeholder="Additional notes"></textarea>
+</h2>
 
-<label>Recommended Hospital</label>
 
-<select>
 
-<option>King Faisal Hospital</option>
-<option>CHUK</option>
-<option>Rwanda Military Hospital</option>
-<option>Kibagabaga Hospital</option>
 
-</select>
 
-<label>Recommended Pharmacy</label>
+<div class="patient-box" id="patientData">
 
-<select>
 
-<option>Goodlife Pharmacy</option>
-<option>MediCare Pharmacy</option>
-<option>Health First Pharmacy</option>
-<option>City Pharmacy</option>
-
-</select>
-
-<button>
-Save Patient Record
-</button>
+Waiting for patient information...
 
 </div>
 
-</div>
+
+
+
+
+
+
+
+<h2>
+
+Doctor Decision
+
+</h2>
+
+
+
+
+
+<label>
+
+Diagnosis
+
+</label>
+
+
+<textarea id="diagnosis"
+placeholder="Enter diagnosis">
+
+</textarea>
+
+
+
+
+
+<label>
+
+Prescription
+
+</label>
+
+
+<textarea id="prescription"
+placeholder="Enter medicine prescription">
+
+</textarea>
+
+
+
+
+
+
+
+<h2>
+
+System Responses
+
+</h2>
+
+
+
+
+<div class="response" id="hospitalResponse">
+
+Hospital response waiting...
 
 </div>
+
+
+
+
+
+<div class="response" id="pharmacyResponse">
+
+Pharmacy response waiting...
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
 
 <footer>
-© 2026 Health Connect | Smart Healthcare Management System
+
+© 2026 Health Connect | Administrator System
+
 </footer>
 
+
+
+
+
+
+
+<script>
+
+
+
+
+
+// =======================================
+// ADMINISTRATOR JAVASCRIPT
+// =======================================
+
+
+
+
+
+// Receive patient data from signup.html
+
+
+
+let patient =
+
+JSON.parse(
+
+localStorage.getItem("patient")
+
+);
+
+
+
+
+
+
+if(patient){
+
+
+
+document.getElementById("patientData").innerHTML=
+
+
+
+`
+
+<b>Name:</b> ${patient.name}<br>
+
+<b>Age:</b> ${patient.age}<br>
+
+<b>Gender:</b> ${patient.gender}<br>
+
+<b>Phone:</b> ${patient.phone}<br>
+
+<b>Email:</b> ${patient.email}<br>
+
+<b>Address:</b> ${patient.address}<br>
+
+<b>Symptoms:</b> ${patient.symptoms}
+
+`;
+
+
+
+}
+
+
+
+
+
+
+
+
+// Send admission request to hospital
+
+
+
+function sendToHospital(){
+
+
+
+
+
+let request={
+
+
+patient:patient,
+
+diagnosis:
+
+document.getElementById("diagnosis").value,
+
+
+status:"Admission Requested"
+
+
+};
+
+
+
+
+
+
+localStorage.setItem(
+
+"hospitalRequest",
+
+JSON.stringify(request)
+
+);
+
+
+
+
+
+alert(
+
+"Patient admission request sent to hospital"
+
+);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// Send prescription to pharmacy
+
+
+
+function sendToPharmacy(){
+
+
+
+
+
+let prescription={
+
+
+patient:patient,
+
+
+medicine:
+
+document.getElementById("prescription").value,
+
+
+status:"Prescription Sent"
+
+
+};
+
+
+
+
+
+
+localStorage.setItem(
+
+"pharmacyRequest",
+
+JSON.stringify(prescription)
+
+);
+
+
+
+
+
+alert(
+
+"Prescription sent to pharmacy"
+
+);
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// Receive hospital and pharmacy responses
+
+
+
+function checkResponses(){
+
+
+
+
+
+let hospital =
+
+localStorage.getItem(
+
+"hospitalResponse"
+
+);
+
+
+
+
+let pharmacy =
+
+localStorage.getItem(
+
+"pharmacyResponse"
+
+);
+
+
+
+
+
+
+if(hospital){
+
+
+document.getElementById(
+
+"hospitalResponse"
+
+).innerHTML=
+
+hospital;
+
+
+}
+
+
+
+
+
+
+if(pharmacy){
+
+
+document.getElementById(
+
+"pharmacyResponse"
+
+).innerHTML=
+
+pharmacy;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+setInterval(
+
+checkResponses,
+
+2000
+
+);
+
+
+
+
+
+
+
+
+
+// Email conclusion
+
+
+
+function sendEmail(){
+
+
+
+
+
+
+let hospital =
+
+localStorage.getItem(
+
+"hospitalResponse"
+
+)||
+
+"Hospital response pending";
+
+
+
+
+
+
+let pharmacy =
+
+localStorage.getItem(
+
+"pharmacyResponse"
+
+)||
+
+"Pharmacy response pending";
+
+
+
+
+
+
+
+
+let message =
+
+
+
+`
+
+Health Connect Medical Conclusion
+
+
+Patient:
+
+${patient.name}
+
+
+
+Hospital Status:
+
+${hospital}
+
+
+
+Pharmacy Status:
+
+${pharmacy}
+
+
+
+Thank you for using Health Connect.
+
+`;
+
+
+
+
+
+
+
+window.location.href =
+
+
+"mailto:"+
+
+patient.email+
+
+"?subject=Health Connect Medical Result&body="
+
++
+
+encodeURIComponent(message);
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+</script>
+
+
+
+
 </body>
+
 </html>
