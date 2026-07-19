@@ -1,577 +1,526 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>Patient Registration | Health Connect</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+<title>
+Health Connect | Home
+</title>
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
 
-        body{
-            font-family:Arial, sans-serif;
-            color:white;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            min-height:100vh;
-            padding:40px 0;
-
-            background:
-            linear-gradient(
-            rgba(11,16,32,0.75),
-            rgba(11,16,32,0.75)),
-            url("images/nurse-patient.jpg");
-
-            background-size:cover;
-            background-position:center;
-            background-attachment:fixed;
-        }
-
-        /* Background Glow */
-
-        .orb{
-            position:absolute;
-            width:350px;
-            height:350px;
-            background:linear-gradient(
-            45deg,
-            #00f0ff,
-            #0077ff);
-
-            border-radius:50%;
-            filter:blur(120px);
-
-            top:-100px;
-            right:-100px;
-
-            opacity:0.4;
-            z-index:-1;
-        }
-
-        /* Glass Form */
-
-        .glass-form-container{
-
-            width:850px;
-
-            background:rgba(
-            255,
-            255,
-            255,
-            0.12);
-
-            border:1px solid rgba(
-            255,
-            255,
-            255,
-            0.15);
-
-            backdrop-filter:blur(15px);
-            -webkit-backdrop-filter:blur(15px);
-
-            padding:40px;
-
-            border-radius:20px;
-
-            box-shadow:
-            0 20px 40px
-            rgba(0,0,0,0.4);
-
-        }
-
-        /* Header */
-
-        .form-header{
-            text-align:center;
-            margin-bottom:30px;
-        }
-
-        .form-header img{
-            margin-bottom:15px;
-        }
-
-        .form-header h2{
-            color:#00f0ff;
-            font-size:32px;
-            margin-bottom:10px;
-        }
-
-        .form-header p{
-            color:#d9e6ff;
-        }
-
-        /* Sections */
-
-        .form-section{
-            margin-bottom:30px;
-        }
-
-        .form-section h3{
-            color:#00f0ff;
-            margin-bottom:20px;
-            border-bottom:
-            1px solid rgba(
-            255,
-            255,
-            255,
-            0.15);
-
-            padding-bottom:10px;
-        }
-
-        .input-row{
-            display:flex;
-            gap:20px;
-            margin-bottom:20px;
-        }
+<style>
 
-        .input-wrapper{
-            flex:1;
-        }
 
-        .input-wrapper label{
-            display:block;
-            margin-bottom:8px;
-            font-size:14px;
-            font-weight:bold;
-        }
+*{
 
-        .input-wrapper input,
-        .input-wrapper select,
-        textarea{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 
-            width:100%;
-            padding:12px;
-            border:none;
-            border-radius:10px;
-            outline:none;
-            background:white;
-            color:black;
+}
 
-        }
 
-        textarea{
-            resize:vertical;
-        }
 
-        /* Radio Buttons */
+body{
 
-        .radio-group{
-            display:flex;
-            gap:20px;
-            margin-top:10px;
-        }
+background:
 
-        .radio-item{
-            display:flex;
-            align-items:center;
-            gap:8px;
-        }
+linear-gradient(
+rgba(0,51,102,.75),
+rgba(0,51,102,.75)
+),
 
-        /* Checkboxes */
+url("images/hospital-background.jpg");
 
-        .check-grid{
-            display:grid;
-            grid-template-columns:
-            repeat(2,1fr);
 
-            gap:10px;
-            margin-top:10px;
-        }
+background-size:cover;
 
-        .check-item{
-            display:flex;
-            align-items:center;
-            gap:10px;
-        }
+background-position:center;
 
-        /* Range */
+background-attachment:fixed;
 
-        .range-labels{
-            display:flex;
-            justify-content:space-between;
-            margin-top:5px;
-            color:#d9e6ff;
-        }
 
-        /* Button */
+}
 
-        .glow-btn{
 
-            width:100%;
-            padding:15px;
 
-            border:none;
-            border-radius:30px;
+/* HEADER */
 
-            background:#0077ff;
-            color:white;
 
-            font-size:16px;
-            font-weight:bold;
+header{
 
-            cursor:pointer;
-            transition:0.3s;
 
-        }
+background:#003366;
 
-        .glow-btn:hover{
+color:white;
 
-            background:#00aaff;
-            transform:scale(1.02);
+padding:20px 50px;
 
-        }
+display:flex;
 
-        /* Link */
+justify-content:space-between;
 
-        .back-link{
+align-items:center;
 
-            display:block;
-            text-align:center;
 
-            margin-top:20px;
+}
 
-            color:#00f0ff;
-            text-decoration:none;
 
-        }
 
-        .back-link:hover{
-            text-decoration:underline;
-        }
+.logo{
 
-        /* Footer */
 
-        .footer{
+font-size:30px;
 
-            text-align:center;
-            margin-top:25px;
+font-weight:bold;
 
-            color:#d9e6ff;
-            font-size:14px;
 
-        }
+}
 
-        /* Mobile */
 
-        @media(max-width:900px){
 
-            .glass-form-container{
-                width:95%;
-            }
+nav a{
 
-            .input-row{
-                flex-direction:column;
-            }
 
-            .check-grid{
-                grid-template-columns:1fr;
-            }
+color:white;
 
-        }
+text-decoration:none;
 
-    </style>
+margin-left:25px;
+
+font-weight:bold;
+
+
+}
+
+
+
+nav a:hover{
+
+
+color:#90ee90;
+
+
+}
+
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+
+height:85vh;
+
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+
+text-align:center;
+
+
+color:white;
+
+
+}
+
+
+
+.content{
+
+
+background:
+
+rgba(255,255,255,.15);
+
+
+backdrop-filter:blur(15px);
+
+
+padding:50px;
+
+
+border-radius:20px;
+
+
+width:850px;
+
+
+}
+
+
+
+.content h1{
+
+
+font-size:55px;
+
+margin-bottom:20px;
+
+
+}
+
+
+
+.content p{
+
+
+font-size:22px;
+
+line-height:35px;
+
+
+margin-bottom:30px;
+
+
+}
+
+
+
+
+
+button{
+
+
+background:green;
+
+
+color:white;
+
+
+padding:15px 35px;
+
+
+border:none;
+
+
+border-radius:8px;
+
+
+font-size:18px;
+
+
+cursor:pointer;
+
+
+}
+
+
+
+button:hover{
+
+
+background:#006400;
+
+
+}
+
+
+
+/* FEATURES */
+
+
+.features{
+
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+padding:50px;
+
+background:white;
+
+
+}
+
+
+
+.card{
+
+
+width:300px;
+
+
+padding:25px;
+
+
+text-align:center;
+
+
+box-shadow:0 0 15px #aaa;
+
+
+border-radius:10px;
+
+
+}
+
+
+
+.card h3{
+
+
+color:#003366;
+
+
+}
+
+
+
+
+
+footer{
+
+
+background:#003366;
+
+
+color:white;
+
+
+padding:20px;
+
+
+text-align:center;
+
+
+}
+
+
+</style>
+
 
 </head>
 
+
+
 <body>
 
-    <div class="orb"></div>
 
-    <div class="glass-form-container">
 
-        <!-- Header -->
+<header>
 
-        <div class="form-header">
 
-            <!-- Optional Logo -->
-            <!--
-            <img src="images/logo.png"
-                 alt="Health Connect Logo"
-                 width="90">
-            -->
+<div class="logo">
 
-            <h2>Health Connect Registration</h2>
+Health Connect
 
-            <p>
-                Register your health information and
-                connect with doctors, hospitals and
-                pharmacies.
-            </p>
+</div>
 
-        </div>
 
-        <!-- FORM -->
 
-        <form action="administrator.html">
+<nav>
 
-            <!-- SECTION 1 -->
 
-            <div class="form-section">
+<a href="index.html">
+Home
+</a>
 
-                <h3>01. Identity & Contact</h3>
 
-                <div class="input-row">
+<a href="signup.html">
+Patient Registration
+</a>
 
-                    <div class="input-wrapper">
 
-                        <label>Full Name</label>
+<a href="administrator.html">
+Administrator
+</a>
 
-                        <input
-                        type="text"
-                        placeholder="e.g. MUKANDOLI Jean"
-                        required>
 
-                    </div>
+</nav>
 
-                    <div class="input-wrapper">
 
-                        <label>Date of Birth</label>
+</header>
 
-                        <input
-                        type="date"
-                        required>
 
-                    </div>
 
-                </div>
 
-                <div class="input-row">
 
-                    <div class="input-wrapper">
+<section class="hero">
 
-                        <label>Email Address</label>
 
-                        <input
-                        type="email"
-                        placeholder="healthconnect@gmail.com"
-                        required>
+<div class="content">
 
-                    </div>
 
-                    <div class="input-wrapper">
+<h1>
 
-                        <label>Phone Number</label>
+Welcome To Health Connect
 
-                        <input
-                        type="tel"
-                        placeholder="+250 790 000 000">
+</h1>
 
-                    </div>
 
-                </div>
+<p>
 
-                <div class="input-row">
+Connecting Patients, Doctors, Hospitals and Pharmacies
+through one intelligent healthcare management system.
 
-                    <div class="input-wrapper">
+</p>
 
-                        <label>District</label>
 
-                        <select required>
 
-                            <option disabled selected>
-                                Select District
-                            </option>
+<button onclick="goToRegistration()">
 
-                            <option>Nyarugenge</option>
-                            <option>Gasabo</option>
-                            <option>Kicukiro</option>
-                            <option>Musanze</option>
-                            <option>Rubavu</option>
-                            <option>Huye</option>
-                            <option>Rusizi</option>
-                            <option>Nyagatare</option>
+Register As Patient
 
-                        </select>
+</button>
 
-                    </div>
 
-                    <div class="input-wrapper">
+</div>
 
-                        <label>Sector</label>
 
-                        <input
-                        type="text"
-                        placeholder="Enter Sector">
+</section>
 
-                    </div>
 
-                </div>
 
-            </div>
 
-            <!-- SECTION 2 -->
 
-            <div class="form-section">
+<section class="features">
 
-                <h3>02. Biological Parameters</h3>
 
-                <div class="input-row">
+<div class="card">
 
-                    <div class="input-wrapper">
 
-                        <label>Blood Type</label>
+<h3>
+Patient
+</h3>
 
-                        <select required>
 
-                            <option disabled selected>
-                                Select Type
-                            </option>
+<p>
 
-                            <option>A+</option>
-                            <option>A-</option>
-                            <option>B+</option>
-                            <option>B-</option>
-                            <option>AB+</option>
-                            <option>AB-</option>
-                            <option>O+</option>
-                            <option>O-</option>
+Register and submit your medical information.
 
-                        </select>
+</p>
 
-                    </div>
 
-                    <div class="input-wrapper">
+</div>
 
-                        <label>Priority Level</label>
 
-                        <div class="radio-group">
 
-                            <label class="radio-item">
+<div class="card">
 
-                                <input
-                                type="radio"
-                                name="priority"
-                                checked>
 
-                                Standard
+<h3>
+Administrator
+</h3>
 
-                            </label>
 
-                            <label class="radio-item">
+<p>
 
-                                <input
-                                type="radio"
-                                name="priority">
+Manage patients, hospitals and pharmacies.
 
-                                Urgent
+</p>
 
-                            </label>
 
-                        </div>
+</div>
 
-                    </div>
 
-                </div>
 
-            </div>
 
-            <!-- SECTION 3 -->
+<div class="card">
 
-            <div class="form-section">
 
-                <h3>03. Medical History</h3>
+<h3>
+Healthcare Services
+</h3>
 
-                <div class="input-wrapper">
 
-                    <label>Current Pain Level</label>
+<p>
 
-                    <input
-                    type="range"
-                    min="0"
-                    max="10">
+Connect hospitals and pharmacies easily.
 
-                    <div class="range-labels">
+</p>
 
-                        <span>Low</span>
-                        <span>High</span>
 
-                    </div>
+</div>
 
-                </div>
 
-                <br>
+</section>
 
-                <div class="input-wrapper">
 
-                    <label>Known Allergies</label>
 
-                    <div class="check-grid">
 
-                        <label class="check-item">
-                            <input type="checkbox">
-                            Penicillin
-                        </label>
+<footer>
 
-                        <label class="check-item">
-                            <input type="checkbox">
-                            Peanuts
-                        </label>
 
-                        <label class="check-item">
-                            <input type="checkbox">
-                            Latex
-                        </label>
+© 2026 Health Connect Healthcare System
 
-                        <label class="check-item">
-                            <input type="checkbox">
-                            Pollen
-                        </label>
 
-                    </div>
+</footer>
 
-                </div>
 
-                <br>
 
-                <div class="input-wrapper">
 
-                    <label>Detailed Symptoms</label>
 
-                    <textarea
-                    rows="5"
-                    placeholder="Explain your condition in detail..."></textarea>
+<script>
 
-                </div>
 
-            </div>
+// ===============================
+// INDEX JAVASCRIPT
+// ===============================
 
-            <!-- Submit -->
 
-            <button
-            type="submit"
-            class="glow-btn">
 
-                Submit Registration
+window.onload=function(){
 
-            </button>
 
-        </form>
+alert(
 
-        <a href="index.html"
-           class="back-link">
+"Welcome to Health Connect Healthcare System"
 
-            ← Return to Homepage
+);
 
-        </a>
 
-        <div class="footer">
+};
 
-            © 2026 Health Connect |
-            Smart Healthcare Management System
 
-        </div>
 
-    </div>
+
+
+function goToRegistration(){
+
+
+let confirmRegister =
+confirm(
+
+"Do you want to register as a patient?"
+
+);
+
+
+
+if(confirmRegister){
+
+
+window.location.href=
+"signup.html";
+
+
+}
+
+
+}
+
+
+
+</script>
+
+
 
 </body>
+
 </html>
