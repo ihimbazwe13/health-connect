@@ -1,255 +1,526 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Connect</title>
 
-    <style>
+<meta charset="UTF-8">
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, sans-serif;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body{
-            background:#f4f6f9;
-        }
+<title>
+Health Connect | Home
+</title>
 
-        /* Header */
 
-        header{
-            background:#003366;
-            color:white;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:20px 50px;
-        }
+<style>
 
-        .logo{
-            font-size:28px;
-            font-weight:bold;
-        }
 
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin-left:25px;
-            font-weight:bold;
-            transition:0.3s;
-        }
+*{
 
-        nav a:hover{
-            color:#90ee90;
-        }
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 
-        /* Hero Section */
+}
 
-        .hero{
-            height:85vh;
-            background:
-            linear-gradient(
-            rgba(0,51,102,0.8),
-            rgba(0,51,102,0.8)),
-            url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d');
 
-            background-size:cover;
-            background-position:center;
 
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
+body{
 
-            color:white;
-            padding:20px;
-        }
+background:
 
-        .hero h1{
-            font-size:60px;
-            margin-bottom:20px;
-        }
+linear-gradient(
+rgba(0,51,102,.75),
+rgba(0,51,102,.75)
+),
 
-        .hero p{
-            font-size:22px;
-            max-width:800px;
-            margin-bottom:30px;
-        }
+url("images/hospital-background.jpg");
 
-        .btn{
-            background:green;
-            color:white;
-            text-decoration:none;
-            padding:15px 30px;
-            border-radius:5px;
-            font-size:18px;
-            transition:0.3s;
-        }
 
-        .btn:hover{
-            background:#006400;
-        }
+background-size:cover;
 
-        /* Features */
+background-position:center;
 
-        .features{
-            padding:60px 30px;
-            display:flex;
-            justify-content:center;
-            gap:30px;
-            flex-wrap:wrap;
-        }
+background-attachment:fixed;
 
-        .card{
-            width:300px;
-            background:white;
-            padding:25px;
-            border-radius:10px;
-            text-align:center;
-            box-shadow:0 0 10px rgba(0,0,0,0.1);
-        }
 
-        .card h3{
-            color:#003366;
-            margin-bottom:15px;
-        }
+}
 
-        .card p{
-            color:#555;
-        }
 
-        /* About Section */
 
-        .about{
-            background:white;
-            padding:60px 30px;
-            text-align:center;
-        }
+/* HEADER */
 
-        .about h2{
-            color:#003366;
-            margin-bottom:20px;
-        }
 
-        .about p{
-            max-width:900px;
-            margin:auto;
-            line-height:1.8;
-            color:#555;
-        }
+header{
 
-        /* Footer */
 
-        footer{
-            background:#003366;
-            color:white;
-            text-align:center;
-            padding:20px;
-        }
+background:#003366;
 
-    </style>
+color:white;
+
+padding:20px 50px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+
+}
+
+
+
+.logo{
+
+
+font-size:30px;
+
+font-weight:bold;
+
+
+}
+
+
+
+nav a{
+
+
+color:white;
+
+text-decoration:none;
+
+margin-left:25px;
+
+font-weight:bold;
+
+
+}
+
+
+
+nav a:hover{
+
+
+color:#90ee90;
+
+
+}
+
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+
+height:85vh;
+
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+
+text-align:center;
+
+
+color:white;
+
+
+}
+
+
+
+.content{
+
+
+background:
+
+rgba(255,255,255,.15);
+
+
+backdrop-filter:blur(15px);
+
+
+padding:50px;
+
+
+border-radius:20px;
+
+
+width:850px;
+
+
+}
+
+
+
+.content h1{
+
+
+font-size:55px;
+
+margin-bottom:20px;
+
+
+}
+
+
+
+.content p{
+
+
+font-size:22px;
+
+line-height:35px;
+
+
+margin-bottom:30px;
+
+
+}
+
+
+
+
+
+button{
+
+
+background:green;
+
+
+color:white;
+
+
+padding:15px 35px;
+
+
+border:none;
+
+
+border-radius:8px;
+
+
+font-size:18px;
+
+
+cursor:pointer;
+
+
+}
+
+
+
+button:hover{
+
+
+background:#006400;
+
+
+}
+
+
+
+/* FEATURES */
+
+
+.features{
+
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+padding:50px;
+
+background:white;
+
+
+}
+
+
+
+.card{
+
+
+width:300px;
+
+
+padding:25px;
+
+
+text-align:center;
+
+
+box-shadow:0 0 15px #aaa;
+
+
+border-radius:10px;
+
+
+}
+
+
+
+.card h3{
+
+
+color:#003366;
+
+
+}
+
+
+
+
+
+footer{
+
+
+background:#003366;
+
+
+color:white;
+
+
+padding:20px;
+
+
+text-align:center;
+
+
+}
+
+
+</style>
+
+
 </head>
+
+
 
 <body>
 
-    <!-- Header -->
 
-    <header>
 
-        <div class="logo">
-            Health Connect
-        </div>
+<header>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="signup.html">Patient Registration</a>
-            <a href="administrator.html">Administrator</a>
-        </nav>
 
-    </header>
+<div class="logo">
 
-    <!-- Hero Section -->
+Health Connect
 
-    <section class="hero">
+</div>
 
-        <h1>Welcome to Health Connect</h1>
 
-        <p>
-            Connecting Patients, Doctors, Hospitals and Pharmacies
-            through one smart healthcare management platform.
-        </p>
 
-        <a href="signup.html" class="btn">
-            Register as Patient
-        </a>
+<nav>
 
-    </section>
 
-    <!-- Features -->
+<a href="index.html">
+Home
+</a>
 
-    <section class="features">
 
-        <div class="card">
+<a href="signup.html">
+Patient Registration
+</a>
 
-            <h3>Patient Registration</h3>
 
-            <p>
-                Patients can easily register and submit their
-                medical information online.
-            </p>
+<a href="administrator.html">
+Administrator
+</a>
 
-        </div>
 
-        <div class="card">
+</nav>
 
-            <h3>Doctor Dashboard</h3>
 
-            <p>
-                Doctors can review patient information,
-                diagnose illnesses and provide prescriptions.
-            </p>
+</header>
 
-        </div>
 
-        <div class="card">
 
-            <h3>Hospitals & Pharmacies</h3>
 
-            <p>
-                Find nearby hospitals and pharmacies
-                for treatment and medication.
-            </p>
 
-        </div>
+<section class="hero">
 
-    </section>
 
-    <!-- About -->
+<div class="content">
 
-    <section class="about">
 
-        <h2>About Health Connect</h2>
+<h1>
 
-        <p>
-            Health Connect is a healthcare management system designed
-            to improve communication between patients, doctors,
-            hospitals and pharmacies. The platform allows patients
-            to register online, doctors to manage diagnoses and
-            prescriptions, and healthcare facilities to provide
-            better services through a centralized system.
-        </p>
+Welcome To Health Connect
 
-    </section>
+</h1>
 
-    <!-- Footer -->
 
-    <footer>
-        © 2026 Health Connect | Smart Healthcare Management System
-    </footer>
+<p>
+
+Connecting Patients, Doctors, Hospitals and Pharmacies
+through one intelligent healthcare management system.
+
+</p>
+
+
+
+<button onclick="goToRegistration()">
+
+Register As Patient
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="features">
+
+
+<div class="card">
+
+
+<h3>
+Patient
+</h3>
+
+
+<p>
+
+Register and submit your medical information.
+
+</p>
+
+
+</div>
+
+
+
+<div class="card">
+
+
+<h3>
+Administrator
+</h3>
+
+
+<p>
+
+Manage patients, hospitals and pharmacies.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<h3>
+Healthcare Services
+</h3>
+
+
+<p>
+
+Connect hospitals and pharmacies easily.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<footer>
+
+
+© 2026 Health Connect Healthcare System
+
+
+</footer>
+
+
+
+
+
+<script>
+
+
+// ===============================
+// INDEX JAVASCRIPT
+// ===============================
+
+
+
+window.onload=function(){
+
+
+alert(
+
+"Welcome to Health Connect Healthcare System"
+
+);
+
+
+};
+
+
+
+
+
+function goToRegistration(){
+
+
+let confirmRegister =
+confirm(
+
+"Do you want to register as a patient?"
+
+);
+
+
+
+if(confirmRegister){
+
+
+window.location.href=
+"signup.html";
+
+
+}
+
+
+}
+
+
+
+</script>
+
+
 
 </body>
+
 </html>
